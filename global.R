@@ -107,5 +107,4 @@ Areas <- teacher_data %>%
 choicesAreas <- Areas %>%
   filter(geographic_level == "National") %>%
   select(geographic_level, area_name = country_name) %>%
-  rbind(Areas %>% filter(geographic_level == "Regional") %>% select(geographic_level, area_name = region_name)) 
-
+  rbind(Areas %>% filter(geographic_level == "Regional") %>% select(geographic_level, area_name = region_name))

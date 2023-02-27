@@ -113,16 +113,18 @@ server <- function(input, output, session) {
 
   # Simple server stuff goes here ------------------------------------------------------------
   reactive_teacher_data <- reactive({
-    if(input$select_breakdown == 'grade'){
-      teacher_data %>% 
-        filter(
-        region_name == input$select_area,
-        gender == 'Total')
-    } else if(input$select_breakdown == 'gender'){
-      teacher_data %>% 
+    if (input$select_breakdown == "grade") {
+      teacher_data %>%
         filter(
           region_name == input$select_area,
-          grade == 'Total')
+          gender == "Total"
+        )
+    } else if (input$select_breakdown == "gender") {
+      teacher_data %>%
+        filter(
+          region_name == input$select_area,
+          grade == "Total"
+        )
     }
   })
 
