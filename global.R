@@ -94,7 +94,7 @@ source("R/support_links.R")
 source("R/read_data.R")
 
 # Read in the data
-dfRevBal <- read_revenue_data()
+teacher_data <- read_data()
 # Get geographical levels from data
 dfAreas <- dfRevBal %>%
   select(
