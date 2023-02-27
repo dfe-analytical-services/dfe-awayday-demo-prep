@@ -3,8 +3,8 @@ teach_num_lineplot <- function(df, breakdown, metric) {
   print(breakdown)
   print(metric)
   print(df)
-  ggplot(df, aes(x = time_period, y = metric, 
-                 color = breakdown)) +
+  ggplot(df, aes(x = time_period, y = get(metric), 
+                 color = get(breakdown))) +
     geom_line(size = 1.2) +
     theme_classic() +
     theme(
@@ -14,15 +14,9 @@ teach_num_lineplot <- function(df, breakdown, metric) {
       axis.line = element_line(size = 1.0),
       legend.position = "top"
     ) +
-    scale_y_continuous(
-      labels = scales::number_format(accuracy = 1, big = ",", prefix = "£")
-    ) +
     xlab("Academic year") +
     ylab(ifelse(metric=='headcount',
-                'Headcount',"Full Time Equivalent")) +
-    scale_color_manual(
-      values = c("#f47738", "#1d70b8", "#000", "#60a", "#0aa")
-    )
+                'Headcount',"Full Time Equivalent")) 
 }
 
 plotAvgRevBenchmark <- function(dfRevenueBalance, inputArea) {
