@@ -10,7 +10,7 @@ dashboard_panel <- function() {
       gov_row(
         column(
           width = 12,
-          h1("Overall content title for this dashboard page (h1)"),
+          h1("School Workforce Data Dashboard demo"),
         ),
         column(
           width = 12,

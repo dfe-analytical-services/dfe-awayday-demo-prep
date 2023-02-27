@@ -65,14 +65,14 @@ ui <- function(input, output, session) {
         href = "dfefavicon.png"
       ),
       # Add title for browser tabs
-      tags$title("DfE Shiny Template")
+      tags$title("DfE Stats Away Day demo")
     ),
     tags$html(lang = "en"),
     # Add meta description for search engines
     meta() %>%
       meta_general(
-        application_name = "DfE Shiny Template",
-        description = "DfE Shiny Template",
+        application_name = "DfE Stats Away Day demo",
+        description = "DfE Stats Away Day demo",
         robots = "index,follow",
         generator = "R-Shiny",
         subject = "stats development",
@@ -104,7 +104,7 @@ ui <- function(input, output, session) {
     shinyGovstyle::header(
       main_text = "",
       main_link = "https://www.gov.uk/government/organisations/department-for-education",
-      secondary_text = "DfE Shiny Template",
+      secondary_text = "DfE Stats Away Day demo",
       logo = "images/DfE_logo_landscape.png",
       logo_width = 150,
       logo_height = 32
@@ -113,14 +113,7 @@ ui <- function(input, output, session) {
       "beta banner",
       "beta",
       paste0(
-        "<b>We're looking for volunteers! We've developed several new dashboards ",
-        "in the last 12 months and we'd really like to know what you think of them. ",
-        "If you're interested in helping us improve our products, please sign up ",
-        "using our <a href='https://forms.office.com/e/ZjNxf10uuN'>user-testing volunteer form</a>.</b><br>",
-        "This Dashboard is in beta phase and we are still reviewing performance and reliability. ",
-        "In case of slowdown or connection issues due to high demand, we have produced two instances of this site which can be accessed at the following links: ",
-        "<a href=", site_primary, " id='link_site_1'>Site 1</a> and ",
-        "<a href=", site_overflow, " id='link_site_2'>Site 2</a>."
+        "This Dashboard is in beta phase and we are still reviewing performance and reliability."
       )
     ),
     shiny::navlistPanel(
