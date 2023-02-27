@@ -94,6 +94,8 @@ source("R/read_data.R")
 
 # Read in the data
 teacher_data <- read_data()
+
+teacher_data$region_name[teacher_data$region_name == ''] <- 'England'
 # Get geographical levels from data
 Areas <- teacher_data %>%
   select(
