@@ -1,5 +1,10 @@
-createAvgRevTimeSeries <- function(dfRevenueBalance, inputArea) {
-  ggplot(dfRevenueBalance, aes(x = year, y = average_revenue_balance, color = area_name)) +
+teach_num_lineplot <- function(df, breakdown, metric) {
+  print(colnames(df))
+  print(breakdown)
+  print(metric)
+  print(df)
+  ggplot(df, aes(x = time_period, y = metric, 
+                 color = breakdown)) +
     geom_line(size = 1.2) +
     theme_classic() +
     theme(
@@ -12,12 +17,11 @@ createAvgRevTimeSeries <- function(dfRevenueBalance, inputArea) {
     scale_y_continuous(
       labels = scales::number_format(accuracy = 1, big = ",", prefix = "£")
     ) +
-    xlab("Academic year end") +
-    ylab("Average revenue balance") +
+    xlab("Academic year") +
+    ylab(ifelse(metric=='headcount',
+                'Headcount',"Full Time Equivalent")) +
     scale_color_manual(
-      "Area",
-      breaks = unique(c("England", inputArea)),
-      values = c("#f47738", "#1d70b8")
+      values = c("#f47738", "#1d70b8", "#000", "#60a", "#0aa")
     )
 }
 

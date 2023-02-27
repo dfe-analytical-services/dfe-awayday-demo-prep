@@ -62,10 +62,10 @@ dashboard_panel <- function() {
               fluidRow(
                 column(
                   width = 12,
-                  h2("Outputs 1 (h2)"),
+                  h2("Time series of teacher numbers"),
                   box(
                     width = 12,
-                    plotlyOutput("lineRevBal")
+                    plotlyOutput("teach_num_lineplotly")
                   )
                 )
               )
